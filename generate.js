@@ -67,7 +67,7 @@ function processIncludes(input, cb) {
   if (incCount === 0) cb(null, input);
   includes.forEach(function(include) {
     var fname = include.replace(/^@include\s+/, '');
-    if (!fname.match(/\.markdown$/)) fname += '.markdown';
+    if (!fname.match(/\.md$/)) fname += '.md';
 
     if (includeData.hasOwnProperty(fname)) {
       input = input.split(include).join(includeData[fname]);
